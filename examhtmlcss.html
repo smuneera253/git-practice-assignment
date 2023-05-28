@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>inputbox</title>
+	</head>
+	<style>
+		.user{
+			padding:10px 150px 8px 0px;
+			margin:left;
+			margin-top:10px;
+			border:2px solid black;
+			font-size:20px;
+			margin-left:500px;
+		}
+		.btn{
+			padding:10px 50px 6px 55px;
+			font-size:20px;
+			margin-top:15px;
+			margin-left:600px;
+			border-radius:0px;
+			background-color:brown;
+			border-radius:5px;
+			
+		}
+		.font{
+			font-size:50px;
+			margin-left:600px;
+			color:red;
+		
+		}
+	</style>
+	<body>
+		<p class="font">Enter data</p>
+		<input text="" placeholder=" " class="user"/></input><br>
+		<button class="btn" oneclick="search()">click me</button>
+		
+	
+	
+	<script>
+	
+		let button = document.querySelector(".btn");
+		
+		let result=JSON.parse(localStorage.getItem("lastChild")) ||[];
+		
+		button.onclick=function()
+		{
+			let userdata= document.querySelector(".user").value;
+			let nametag= document.createElement("div");
+			/*for(int i=0;i<result.length;i++)
+			{
+				let nametag= document.createElement("div");
+				nametag.style.marginRight = "40px";
+				nametag.innerText=result[i].name;
+				
+			}*/
+				
+				
+						
+			console.log(userdata);
+			
+			localStorage.setItem("lastChild", JSON.stringify([...result,{userdata}]));
+			console.log(localStorage.getItem("lastChild"));
+			alert("successfully enter");
+			
+
+		
+		}
+		
+		
+	</script>
+</html>
